@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Direct usage example</title>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/animate.css@^3.5.2/animate.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/quasar-framework@0.17.20/dist/umd/quasar.mat.min.css" rel="stylesheet">
+
+<div id="app">
+  <app-layout></app-layout>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-router@3.0.3/dist/vue-router.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuex@3.1.0/dist/vuex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/quasar-framework@0.17.20/dist/umd/quasar.mat.umd.min.js"></script>
+
+<script type="module">
+  import AppLayout from '/src/AppLayout.js'
+  import router from '/src/plugins/router/index.js'
+  import store from '/src/plugins/store/index.js'
+
+  Vue.config.productionTip = false
+
+  new Vue({
+    router,
+    store,
+    render: h => h(AppLayout)
+  }).$mount('#app')
+</script>
