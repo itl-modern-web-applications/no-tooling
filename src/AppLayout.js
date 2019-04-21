@@ -54,8 +54,10 @@ export default {
     </q-layout>
   `,
 
-  data: () => ({
-    drawer: false
-  })
+  data () {
+    return {
+      drawer: false
+    }
+  }
 }
   

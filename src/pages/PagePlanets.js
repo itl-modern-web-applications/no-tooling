@@ -15,11 +15,9 @@ export default {
     </q-page>
   `,
 
-  data () {
-    return {
-      loading: false
-    }
-  },
+  data: () => ({
+    loading: false
+  }),
 
   computed: {
     ...Vuex.mapGetters([
