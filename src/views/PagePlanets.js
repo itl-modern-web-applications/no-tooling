@@ -1,6 +1,10 @@
+import PageTitle from '/src/components/Shared/PageTitle.js'
+
 export default {
   template: `
     <q-page padding>
+      <page-title msg="Table with SW planets"></page-title>
+
       <q-table
         title="Star Wars Planets"
         :columns="[
@@ -15,6 +19,10 @@ export default {
     </q-page>
   `,
 
+  components: {
+    PageTitle
+  },
+
   data: () => ({
     loading: false
   }),
@@ -22,14 +30,17 @@ export default {
   computed: {
     ...Vuex.mapGetters([
       'planets'
-    ])
+    ]),
+    // other computed props
   },
 
+  // methods only from vuex
   methods: Vuex.mapActions({
     getPlanets: 'api/getPlanets'
   }),
 
-  async created () {
+  // without async
+  created () {
     this.loading = true
     this.getPlanets().then(() => ( this.loading = false ))
   }

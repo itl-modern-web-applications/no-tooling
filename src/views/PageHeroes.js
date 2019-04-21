@@ -1,6 +1,10 @@
+import PageTitle from '/src/components/Shared/PageTitle.js'
+
 export default {
   template: `
     <q-page padding>
+      <page-title msg="Table with SW heroes"></page-title>
+
       <q-table
         title="Star Wars Heroes"
         :columns="[
@@ -15,12 +19,17 @@ export default {
     </q-page>
   `,
 
+  components: {
+    PageTitle
+  },
+
   data () {
     return {
       loading: false
     }
   },
 
+  // computed only from getters
   computed: Vuex.mapGetters([
     'heroes'
   ]),
@@ -28,9 +37,11 @@ export default {
   methods: {
     ...Vuex.mapActions('api', [
       'getHeroes'
-    ])
+    ]),
+    // other methods
   },
 
+  // with async
   async created () {
     this.loading = true
     await this.getHeroes()

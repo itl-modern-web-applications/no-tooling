@@ -1,14 +1,14 @@
 
 const PageHome = () => ({
-  component: import('/src/pages/PageHome.js')
+  component: import('/src/views/PageHome.js')
 })
 
 const PageHeroes = () => ({
-  component: import('/src/pages/PageHeroes.js')
+  component: import('/src/views/PageHeroes.js')
 })
 
 const PagePlanets = () => ({
-  component: import('/src/pages/PagePlanets.js')
+  component: import('/src/views/PagePlanets.js')
 })
 
 export default [{
