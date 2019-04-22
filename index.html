@@ -32,7 +32,12 @@
   import router from '/src/plugins/router/index.js'
   import store from '/src/plugins/store/index.js'
 
+  const globals = {
+    drawer: false
+  }
+
   Vue.config.productionTip = false
+  Vue.prototype.$globals = Vue.observable(globals)
 
   new Vue({
     router,
