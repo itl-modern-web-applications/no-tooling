@@ -1,4 +1,4 @@
-import LayoutDefault from '/src/layouts/LayoutDefault/index.js'
+import LayoutDefault from '/js/layouts/LayoutDefault/index.js'
 
 export default {
   template: `

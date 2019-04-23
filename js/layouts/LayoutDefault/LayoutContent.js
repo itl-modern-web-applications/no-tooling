@@ -7,7 +7,7 @@ export default {
         leave-active-class="animated fadeOut"
         mode="out-in"
       >
-        <router-view style="animation-duration: .3s;"></router-view>
+        <router-view class="fade-faster"></router-view>
       </transition>
     </q-page-container>
   `

@@ -1,4 +1,4 @@
-import HomePageComponent from '/src/components/PageHome/HomePageComponent.js'
+import HomePageComponent from '/js/components/PageHome/HomePageComponent.js'
 
 export default {
   template: `

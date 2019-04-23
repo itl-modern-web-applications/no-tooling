@@ -1,32 +1,28 @@
 export default {
-  props: {
-    mountpoint: {
-      type: String,
-      required: true
-    },
-
-    stateKey: {
-      type: String,
-      required: true
-    }
-  },
-
   data () {
     return {
       loading: false
     }
   },
 
-  methods: Vuex.mapActions({
-    getData: 'api/getData'
-  }),
+  props: {
+    action: {
+      type: String,
+      required: true
+    },
+
+    storageKey: {
+      type: String,
+      required: true
+    }
+  },
 
   async created () {
     this.loading = true
 
-    await this.getData({
-      mountpoint: this.mountpoint,
-      stateKey: this.stateKey
+    await this.$store.dispatch({
+      type: `api/${this.action}`,
+      storageKey: this.storageKey
     })
 
     this.loading = false
@@ -34,7 +30,7 @@ export default {
 
   render () {
     return this.$scopedSlots.default({
-      data: this.$store.state[this.stateKey],
+      data: this.$store.state[this.storageKey],
       loading: this.loading
     })
   }
