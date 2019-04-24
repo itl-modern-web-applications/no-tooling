@@ -40,6 +40,7 @@
   Vue.config.productionTip = false
   // simple datastore, app wide reactive globals
   // accessible in every component through this.$globals
+  // used in layout for communication between header and drawer
   Vue.prototype.$globals = Vue.observable(globals)
 
   new Vue({

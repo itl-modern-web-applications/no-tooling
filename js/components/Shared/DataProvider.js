@@ -10,7 +10,6 @@ export default {
       type: String,
       required: true
     },
-
     storageKey: {
       type: String,
       required: true
