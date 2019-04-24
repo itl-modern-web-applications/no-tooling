@@ -5,13 +5,13 @@ const api = axios.create({
 })
 
 export default {
-  async getPeople ({ rootState }, { storageKey }) {
+  async getPeople ({ rootState }) {
     let { data: { results } } = await api.get(PATH.PEOPLE)
-    rootState[storageKey] = results
+    rootState.people = results
   },
 
-  async getPlanets ({ rootState }, { storageKey }) {
+  async getPlanets ({ rootState }) {
     let { data: { results } } = await api.get(PATH.PLANETS)
-    rootState[storageKey] = results
+    rootState.planets = results
   }
 }

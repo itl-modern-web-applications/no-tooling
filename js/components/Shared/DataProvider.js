@@ -19,12 +19,7 @@ export default {
 
   async created () {
     this.loading = true
-
-    await this.$store.dispatch({
-      type: `api/${this.action}`,
-      storageKey: this.storageKey
-    })
-
+    await this.$store.dispatch(`api/${this.action}`)
     this.loading = false
   },
 
